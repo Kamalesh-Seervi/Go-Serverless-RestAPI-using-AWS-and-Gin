@@ -9,16 +9,14 @@ provider:
   stage: ${opt:stage}
 
 functions:
-  handler: bin/main
-  events: 
-    - http:
-        path: /ping
-        method: GET
+  api:
+    handler: bin/main
+    events: 
+      - http:
+          path: /ping
+          method: GET
 
 package:
   patterns:
-#exclude 
     - '!*/**'
-
-#include
     - bin/main
